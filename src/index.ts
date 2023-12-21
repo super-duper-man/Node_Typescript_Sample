@@ -30,6 +30,10 @@ mongoose.Promise = Promise;
 
 mongoose.connect(process.env.MONGO_URI);
 
+mongoose.connection.on("connected", () => {
+  console.log("::: Mongoose connected to Mongo DB :::");
+});
+
 mongoose.connection.on("error", (error: Error) => {
   console.log(error);
 });
