@@ -2,7 +2,7 @@ import { createUser, getUserByEmail } from "db/users";
 import express from "express";
 import { authentication, random } from "helpers";
 
-const register = async (req: express.Request, res: express.Response) => {
+export const register = async (req: express.Request, res: express.Response) => {
   try {
     const { email, password, username } = req.body;
 
